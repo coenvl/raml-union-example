@@ -15,7 +15,7 @@ public class RamlExample {
 					AtlasImpl.class);
 			System.out.println(a.getRegions());
 		} catch (Exception e) {
-			System.err.println(e.getMessage());
+			e.printStackTrace();
 		}
 		
 		try {
@@ -24,7 +24,7 @@ public class RamlExample {
 					Biome.class);
 			System.out.println(b);
 		} catch (Exception e) {
-			System.err.println(e.getMessage());
+			e.printStackTrace();
 		}
 		
 		try {
@@ -33,7 +33,7 @@ public class RamlExample {
 					Biome.class);
 			System.out.println(c);
 		} catch (Exception e) {
-			System.err.println(e.getMessage());
+			e.printStackTrace();
 		}
 		
 	}
