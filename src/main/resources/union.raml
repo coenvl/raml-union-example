@@ -1,0 +1,52 @@
+#%RAML 1.0
+title: EFI Storage category
+version: v0.0.1
+mediaType: application/json
+
+types:
+    
+    Atlas:
+        type: object
+        properties:
+            regions: Biome[]
+    
+    BiomeBase:
+        discriminator: kind
+        type: object
+        properties:
+            id: integer
+            name: string
+            kind: string
+    
+    Ocean:
+        type: BiomeBase
+        properties:
+            animals: OceanAnimal[]
+              
+    Jungle:
+        type: BiomeBase
+        properties:
+            animals: JungleAnimal[]
+
+    OceanAnimal:
+        type: object
+        properties:
+            color: string
+            
+    JungleAnimal:
+        type: object
+        properties:
+            legs: integer
+            
+    Biome:
+        type: Ocean | Jungle
+    
+/info:
+  get:
+    description: Get biome info
+    responses:
+      200:
+        body:
+          type: Biome
+
+
